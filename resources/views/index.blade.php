@@ -12,7 +12,6 @@
     <h4 class="page-title">Painel geral</h4>
 </div>
 <div class="row">
-
     <div class="col-sm-6 col-md-3">
         <a href="/painel/users" style="text-decoration: none;">
             <div class="card card-stats card-primary card-round">

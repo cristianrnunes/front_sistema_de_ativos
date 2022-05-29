@@ -48,7 +48,7 @@
                     <!-- @csrf -->
                     <div class="login-form">
                         <div class="form-group form-floating-label">
-                            <input id="email" name="email" type="text" class="form-control input-border-bottom"
+                            <input id="email" name="username" type="text" class="form-control input-border-bottom"
                                 required>
                             <label for="email" class="placeholder">E-mail</label>
                         </div>
@@ -60,6 +60,9 @@
                                 <i class="flaticon-interface"></i>
                             </div>
                         </div>
+                        <div class="col col-md-12 login-forget text-right">
+						    <a href="esqueci_a_senha" class="link">Esqueci minha senha</a>
+					    </div>
                         <div class="form-action">
                             <button type="submit" class="btn btn-primary btn-rounded btn-login">Entrar</button>
                         </div>
