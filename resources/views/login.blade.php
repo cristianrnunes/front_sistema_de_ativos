@@ -36,16 +36,16 @@
     <div class="login">
         <div class="wrapper wrapper-login">
             <div class="container container-login animated fadeIn">
-                <!-- @if(session('msg'))
+                @if(session('msg'))
                 <div id="div-msg" class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{session('msg')}}
                 </div>
-                @endif -->
+                @endif
                 <div style="display: flex; justify-content: center;">
                 <img style="border-radius: 5px;" width="30%" src="/assets/img/img/logo.jpg" alt="logo img" class="logo-img">
                 </div>
-                <form action="/painel/auth" method="post">
-                    <!-- @csrf -->
+                <form action="/auth" method="post">
+                    @csrf
                     <div class="login-form">
                         <div class="form-group form-floating-label">
                             <input id="email" name="username" type="text" class="form-control input-border-bottom"
@@ -74,7 +74,6 @@
     <script src="/assets/js/core/popper.min.js"></script>
     <script src="/assets/js/core/bootstrap.min.js"></script>
     <script src="/assets/js/ready.js"></script>
-
 
     <script src="/assets/js/main.js"></script>
 

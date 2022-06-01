@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/login', [loginController::class, 'index']);
+Route::post('/auth', [loginController::class, 'auth']);
 
 Route::get('esqueci_a_senha', [loginController::class, 'forgotPassword']);
 
