@@ -30,7 +30,8 @@ class loginController extends Controller
 
             if( isset ($token->token)){
                 Session::put('token', $token->token); 
-                return redirect("/");               
+                Session::put('username', $username);
+                return redirect("/")->with("msg" , "Olá " . $username );               
             }elseif(isset ($token->error)){
                 return redirect('login')->with("msg" , "Email e/ou senha inválidos!");
             }

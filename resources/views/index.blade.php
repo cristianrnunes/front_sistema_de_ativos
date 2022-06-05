@@ -77,5 +77,12 @@
         </a>
     </div>
 </div>
+@if(session('msg'))
+    <div id="div-msg" data-notify="container" class="col-10 col-xs-11 col-sm-4 alert alert-info" role="alert" data-notify-position="bottom-right" style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 0.5s ease-in-out 0s; z-index: 1031; bottom: 20px; right: 20px;">
+    <span data-notify="icon" class="flaticon-hands"></span> 
+    <span data-notify="title">Olá</span> 
+    <span data-notify="message">{{session('msg')}}!</span>
+</div> 
+@endif
 
 @endsection

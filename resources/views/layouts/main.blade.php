@@ -81,7 +81,7 @@
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                 <span>
                                    
-                                    <span class="user-level">Administrador</span>
+                                    <span class="user-level">{{session()->get('username')}}</span>
                                 </span>
                             </a>
                             <div class="clearfix"></div>
