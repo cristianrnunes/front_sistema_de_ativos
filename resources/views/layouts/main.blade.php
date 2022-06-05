@@ -60,7 +60,7 @@
                         </button>
                     </div>
                     <div class="col-1" style="text-align: end;">
-                        <a href=" /painel/logout" style="color: white; text-decoration:none; font-size:16px ">Sair</a>
+                        <a href="logout" style="color: white; text-decoration:none; font-size:16px ">Sair</a>
                     </div>
                 </div>
             </nav>

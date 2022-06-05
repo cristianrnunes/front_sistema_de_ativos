@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Helpers\HelperBaseUrlApi;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class loginController extends Controller
 {
@@ -21,18 +21,24 @@ class loginController extends Controller
 
             $data = HelperBaseUrlApi::baseUrlApi("login");
             
-            $response = Http::asForm()->post( $data, [
+            $response = Http::post( $data, [
                 'username' => $username,
                 'password' => $password,
             ]);
 
             $token = json_decode( $response->body());
-            // dd($token->error);
+
             if( isset ($token->token)){
-               return redirect ("/");
-            }else{
+                Session::put('token', $token->token); 
+                return redirect("/");               
+            }elseif(isset ($token->error)){
                 return redirect('login')->with("msg" , "Email e/ou senha inválidos!");
             }
+        }
+
+        public function logout(){
+            Session::forget('token');
+            return redirect ('/login');
         }
 
         public function forgotPassword(){
