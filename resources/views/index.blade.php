@@ -25,7 +25,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category">Usuários</p>
-                                <h4 class="card-title">1</h4>
+                                <h4 class="card-title">0</h4>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
             </div>
         </a>
     </div>
-    <div class="col-sm-6 col-md-3">
+    <!-- <div class="col-sm-6 col-md-3">
         <a href="/painel/products" style="text-decoration: none;">
             <div class="card card-stats card-info card-round">
                 <div class="card-body">
@@ -53,8 +53,8 @@
                 </div>
             </div>
         </a>
-    </div>
-    <div class="col-sm-6 col-md-3">
+    </div> -->
+    <!-- <div class="col-sm-6 col-md-3">
         <a href="/painel/services" style="text-decoration: none;">
             <div class="card card-stats card-secondary card-round">
                 <div class="card-body ">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </a>
-    </div>
+    </div> -->
 </div>
 @if(session('msg'))
     <div id="div-msg" data-notify="container" class="col-10 col-xs-11 col-sm-4 alert alert-info" role="alert" data-notify-position="bottom-right" style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: all 0.5s ease-in-out 0s; z-index: 1031; bottom: 20px; right: 20px;">

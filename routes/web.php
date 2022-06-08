@@ -16,4 +16,16 @@ Route::get('esqueci_a_senha', [loginController::class, 'forgotPassword']);
 
 Route::get('nova_senha', [loginController::class, 'newPassword']);
 
+Route::get('usuarios', function(){
+    return view('users');
+});
+
+Route::get('adicionar_usuario', function(){
+    return view('addUser');
+});
+
+Route::get('editar_usuario', function(){
+    return view('editUser');
+});
+
 

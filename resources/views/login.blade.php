@@ -50,7 +50,7 @@
                         <div class="form-group form-floating-label">
                             <input id="email" name="username" type="text" class="form-control input-border-bottom"
                                 required>
-                            <label for="email" class="placeholder">E-mail</label>
+                            <label for="email" class="placeholder">Usuário</label>
                         </div>
                         <div class="form-group form-floating-label">
                             <input id="password" name="password" type="password"

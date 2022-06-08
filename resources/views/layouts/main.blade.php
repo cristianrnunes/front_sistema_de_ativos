@@ -90,12 +90,12 @@
                     <ul class="nav">
 
                         <li class="nav-item">
-                            <a href="/painel/dashboard">
+                            <a href="/">
                                 <i class="flaticon-home"></i>
                                 <p>Painel Geral</p>
                             </a>
                         </li>
-                        <li class="nav-section">
+                        <!-- <li class="nav-section">
                             <span class="sidebar-mini-icon">
                                 <i class="la la-ellipsis-h"></i>
                             </span>
@@ -112,15 +112,15 @@
                                 <i class="flaticon-users"></i>
                                 <p>Empregados</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item">
                             <a data-toggle="collapse" href="/painel/contacts">
                                 <i class="flaticon-desk"></i>
                                 <p>Setores</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item ">
-                            <a data-toggle="collapse" href="/painel/users">
+                            <a data-toggle="collapse" href="/usuarios">
                                 <i class="flaticon-user-5"></i>
                                 <p>Usuários</p>
                             </a>
