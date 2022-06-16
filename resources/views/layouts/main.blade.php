@@ -23,13 +23,8 @@
         }
     });
     </script>
-
-    <!-- CSS Files -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/ready.min.css">
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <!-- <link rel="stylesheet" href="/assets/css/demo.css"> -->
 </head>
 
 <body>
@@ -60,14 +55,11 @@
                         </button>
                     </div>
                     <div class="col-1" style="text-align: end;">
-                        <a href="logout" style="color: white; text-decoration:none; font-size:16px ">Sair</a>
+                        <a href="/logout" style="color: white; text-decoration:none; font-size:16px ">Sair</a>
                     </div>
                 </div>
             </nav>
-            <!-- End Navbar -->
         </div>
-
-        <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-background"></div>
             <div class="sidebar-wrapper scrollbar-inner">
@@ -80,7 +72,6 @@
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                 <span>
-                                   
                                     <span class="user-level">{{session()->get('username')}}</span>
                                 </span>
                             </a>
@@ -113,18 +104,20 @@
                                 <p>Empregados</p>
                             </a>
                         </li> -->
-                        <!-- <li class="nav-item">
-                            <a data-toggle="collapse" href="/painel/contacts">
+                        @if(Session::has('p_reg_employees') && Session::get('p_reg_employees') == 1)
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="/setores">
                                 <i class="flaticon-desk"></i>
                                 <p>Setores</p>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="nav-item ">
                             <a data-toggle="collapse" href="/usuarios">
                                 <i class="flaticon-user-5"></i>
                                 <p>Usuários</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>

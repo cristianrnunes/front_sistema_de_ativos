@@ -14,58 +14,22 @@
             </div>
         </div>
         <div class="card-body">
-            <!-- Modal -->
-            <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header no-bd">
-                            <h5 class="modal-title">
-                                <span class="fw-mediumbold"> New</span>
-                                <span class="fw-light">
-                                    Row
-                                </span>
-                            </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class="small">Create a new row using this form, make sure you fill them all</p>
-                            <form>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group form-group-default">
-                                            <label>Name</label>
-                                            <input id="addName" type="text" class="form-control" placeholder="fill name" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 pr-0">
-                                        <div class="form-group form-group-default">
-                                            <label>Position</label>
-                                            <input id="addPosition" type="text" class="form-control" placeholder="fill position" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group form-group-default">
-                                            <label>Office</label>
-                                            <input id="addOffice" type="text" class="form-control" placeholder="fill office" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer no-bd">
-                            <button type="button" id="addRowButton" class="btn btn-primary">Add</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+         @if(session('msg_error'))
+            <div id="div-msg" class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{session('msg_error')}}
+            </div>
+        @endif
+        @if(session('msg'))
+            <div id="div-msg" class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session('msg')}}
+            </div>
+        @endif
+            @if($users != 0)
             <div class="table-responsive">
                 <div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <!-- <div class="col-sm-12 col-md-6">
                             <div class="dataTables_length" id="add-row_length">
                                 <label>
                                     Mostrar
@@ -78,12 +42,12 @@
                                     registros
                                 </label>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
+                        </div> -->
+                        <!-- <div class="col-sm-12 col-md-6">
                             <div id="add-row_filter" class="dataTables_filter">
                                 <label>Pesquisar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="add-row" /></label>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
@@ -95,31 +59,76 @@
                                         <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 186.641px;">Email</th>
                                         <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 186.641px;">Tipo</th>
                                         <th style="width: 103.016px;" class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Ação</th>
+                                        <th style="width: 103.016px;" class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">teste</td>
-                                        <td>teste</td>
-                                        <td>teste</td>
-                                        <td>teste</td>
+                                    @foreach($users as $user)
+                                    @if($user->username == Session::get('username'))
+                                    <tr role="row" class="odd" style="background-color:#b5c9bb;">
+                                        <td class="sorting_1">{{$user->name}}</td>
+                                        <td>{{$user->username}}</td>
+                                        <td>{{$user->email}}</td>
+                                        @if($user->employee_role_id == 1)
+                                        <td>Administrador</td>
+                                        @else
+                                        <td>Padrão</td>
+                                        @endif
+                                        @if($user->active == 1)
+                                        <td>Ativo</td>
+                                        @else
+                                        <td>Inativo</td>
+                                        @endif
                                         <td>
                                             <div class="form-button-action">
-                                                <a href="editar_usuario" type="button" data-toggle="tooltip" title="Editar" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                                <a href="editar_usuario/{{$user->id}}" type="button" data-toggle="tooltip" title="Editar" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
                                                     <i class="la la-edit"></i>
                                                 </a>
-                                                <button type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                <!-- <button type="button" onclick=" openModal()" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
                                                     <i class="la la-times"></i>
-                                                </button>
+                                                </button> -->
+                                                <a href="deletar_usuario/{{$user->id}}/{{$user->username}}" type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                    <i class="la la-times"></i>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
-                                    
+                                    @else
+                                    <tr role="row" class="odd">
+                                        <td class="sorting_1">{{$user->name}}</td>
+                                        <td>{{$user->username}}</td>
+                                        <td>{{$user->email}}</td>
+                                        @if($user->employee_role_id == 1)
+                                        <td>Administrador</td>
+                                        @else
+                                        <td>Padrão</td>
+                                        @endif
+                                        @if($user->active == 1)
+                                        <td>Ativo</td>
+                                        @else
+                                        <td>Inativo</td>
+                                        @endif
+                                        <td>
+                                            <div class="form-button-action">
+                                                <a href="editar_usuario/{{$user->id}}" type="button" data-toggle="tooltip" title="Editar" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                                    <i class="la la-edit"></i>
+                                                </a>
+                                                <!-- <button type="button" onclick=" openModal()" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                    <i class="la la-times"></i>
+                                                </button> -->
+                                                <a href="deletar_usuario/{{$user->id}}/{{$user->username}}" type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                    <i class="la la-times"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm-12 col-md-12">
                             <div class="dataTables_paginate paging_simple_numbers" id="add-row_paginate">
                                 <ul class="pagination">
@@ -128,10 +137,15 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
+            @else
+            <h4>Não existem usuários cadastrados!</h4>
+            @endif
         </div>
     </div>
 </div>
+
 @endsection
+
