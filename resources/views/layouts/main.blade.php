@@ -32,7 +32,7 @@
         <div class="main-header">
             <!-- Logo Header -->
             <div class="logo-header" style="display: flex; justify-content: center; align-itens:center">
-                <a href="/painel" class="big-logo">
+                <a href="/" class="big-logo">
                     <img style="border-radius: 5px;" src="/assets/img/img/logo.jpg" alt="logo img" class="logo-img">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
@@ -118,6 +118,18 @@
                             </a>
                         </li>
                         @endif
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="/ativos">
+                                <i class="flaticon-box"></i>
+                                <p>Ativos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="/ocorrencias">
+                                <i class="flaticon-layers"></i>
+                                <p>Ocorrências</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -202,6 +214,10 @@
     <!-- Ready Pro JS -->
     <script src="/assets/js/ready.min.js"></script>
 
+    
+    <script src="/assets/js/main.js"></script>
+    <!-- Link gerar Código de barras -->
+   
     <!-- Ready Pro DEMO methods, don't include it in your project! -->
     <!-- <script src="/assets/js/setting-demo.js"></script> -->
     <!-- <script src="/assets/js/demo.js"></script> -->

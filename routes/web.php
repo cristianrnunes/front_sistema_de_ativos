@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ActiveController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\OcurrencesController;
 use App\Http\Controllers\PainelController;
 use App\Http\Controllers\SectorContorller;
 use App\Http\Controllers\UserController;
@@ -34,4 +36,17 @@ Route::post('update_sector', [SectorContorller::class, 'editSectors']);
 // Route::get('edit_sector', [SectorContorller::class, 'editSectors']);
 Route::get('deletar_setor/{id}', [SectorContorller::class, 'deleteSector']);
 
+//Rotas de ativos
+Route::get('ativos', [ActiveController::class, 'index']);
+Route::get('adicionar_ativo', [ActiveController::class, 'viewAddActives']);
+Route::post('criar_ativo', [ActiveController::class, 'createActive']);
+Route::get('editar_ativo/{id}', [ActiveController::class, 'viewEditActive']);
+Route::post('update_sector', [ActiveController::class, 'editActive']);
+Route::get('manutencoes',  [ActiveController::class, 'viewEditMaintenance']); 
 
+//Rotas de ocorrências
+Route::get('ocorrencias', [OcurrencesController::class, 'index']);
+Route::get('adicionar_ocorrencia', [OcurrencesController::class, 'viewAddOcorrences']);
+Route::post('criar_ocorrencia', [OcurrencesController::class, 'createOcorrence']);
+Route::get('editar_ocorrencia/{id}', [OcurrencesController::class, 'viewEditOcorrence']);
+Route::post('update_ocorrencia', [OcurrencesController::class, 'editOcorrence']);

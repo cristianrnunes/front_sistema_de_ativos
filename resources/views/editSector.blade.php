@@ -62,6 +62,19 @@
                   </div>
                </div>
             </div>
+            <div class="form-group form-show-validation row container" style="justify-content: end !important">
+                  <div class="form-check" style="background-color:#e9e9e9; border-radius:10px">
+                     <h6>Status</label><h6>
+                     <label class="form-radio-label">
+                     <input class="form-radio-input" type="radio" name="active" value="1"  >
+                     <span class="form-radio-sign">Ativo</span>
+                     </label>
+                     <label class="form-radio-label ml-3">
+                     <input class="form-radio-input" type="radio" name="active" value="0">
+                     <span class="form-radio-sign">Inativo</span>
+                     </label>
+                  </div>
+            </div>
             <input type="text" name="id" value="{{$sector->id}}" hidden>
                <div class="card-action">
                   <div class="row">

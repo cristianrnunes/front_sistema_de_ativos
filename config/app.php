@@ -230,7 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'HelperBaseUrlApi' => App\Helpers\Helper::class,
-        'HelperBaseUrlApi' => App\Helpers\HelperBaseUrlApi::class
+        'HelperBaseUrlApi' => App\Helpers\HelperBaseUrlApi::class,
+        'HelperAux' =>App\Helpers\HelperAux::class
 
     ],
 

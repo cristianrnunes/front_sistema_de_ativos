@@ -58,8 +58,8 @@
                                         <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 354.656px;">Usuário</th>
                                         <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 186.641px;">Email</th>
                                         <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 186.641px;">Tipo</th>
-                                        <th style="width: 103.016px;" class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Ação</th>
                                         <th style="width: 103.016px;" class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Status</th>
+                                        <th style="width: 30.016px;" class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,9 +87,9 @@
                                                 <!-- <button type="button" onclick=" openModal()" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
                                                     <i class="la la-times"></i>
                                                 </button> -->
-                                                <a href="deletar_usuario/{{$user->id}}/{{$user->username}}" type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                <!-- <a href="deletar_usuario/{{$user->id}}/{{$user->username}}" type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
                                                     <i class="la la-times"></i>
-                                                </a>
+                                                </a> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -116,9 +116,9 @@
                                                 <!-- <button type="button" onclick=" openModal()" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
                                                     <i class="la la-times"></i>
                                                 </button> -->
-                                                <a href="deletar_usuario/{{$user->id}}/{{$user->username}}" type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                <!-- <a href="deletar_usuario/{{$user->id}}/{{$user->username}}" type="button" data-toggle="tooltip" title="Remover" class="btn btn-link btn-danger" data-original-title="Remove">
                                                     <i class="la la-times"></i>
-                                                </a>
+                                                </a> -->
                                             </div>
                                         </td>
                                     </tr>
