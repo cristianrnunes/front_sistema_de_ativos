@@ -84,9 +84,7 @@ class ActiveController extends Controller
             return redirect('/adicionar_ativo')->with("msg", "Ativo criado com sucesso!"); 
         }else{
             return redirect('/adicionar_ativo')->with("msg_error", "Erro ao adicionar novo ativo");
-        }
-                
-        
+        }   
        
     }
 

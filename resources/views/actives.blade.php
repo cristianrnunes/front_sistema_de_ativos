@@ -14,7 +14,7 @@
                     Adicionar ativo
                 </a>
                 @endif
-                <a href="/manutencoes" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#addRowModal">
+                <a href="manutencoes" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#addRowModal">
                     <i class="la la-plus"></i>
                     Manutenções
                 </a>

@@ -37,7 +37,7 @@
                   </div>
                   @endif
                   @if(session('msg_error'))
-                  <div id="div-msg" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <div id="div-msg" class="mt-2 alert alert-danger alert-dismissible fade show" role="alert">
                      {{session('msg_error')}}
                   </div>
                   @endif

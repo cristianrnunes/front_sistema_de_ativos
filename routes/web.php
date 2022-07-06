@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActiveController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\MaintencesController;
 use App\Http\Controllers\OcurrencesController;
 use App\Http\Controllers\PainelController;
 use App\Http\Controllers\SectorContorller;
@@ -50,3 +51,9 @@ Route::get('adicionar_ocorrencia', [OcurrencesController::class, 'viewAddOcorren
 Route::post('criar_ocorrencia', [OcurrencesController::class, 'createOcorrence']);
 Route::get('editar_ocorrencia/{id}', [OcurrencesController::class, 'viewEditOcorrence']);
 Route::post('update_ocorrencia', [OcurrencesController::class, 'editOcorrence']);
+
+//Rotas de manutenções
+Route::get('manutencoes', [MaintencesController::class, 'index']);
+Route::post('criar_manutencao', [MaintencesController::class, 'createMaintence']);
+Route::get('editar_manutencao/{id}', [MaintencesController::class, 'viewEditMaintence']);
+Route::post('update_manutencao', [MaintencesController::class, 'editMaintence']);

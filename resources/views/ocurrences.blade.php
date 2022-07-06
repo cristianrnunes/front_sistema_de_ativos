@@ -43,6 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if($ocurrences)
                                     @foreach($ocurrences as $o)
                                     <tr role="row" class="odd">
                                         @foreach($assets as $asset)
@@ -62,6 +63,7 @@
                                         </td>
                                     </tr>
                                     @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

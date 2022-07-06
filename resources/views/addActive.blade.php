@@ -80,7 +80,7 @@
                <div class="form-group form-show-validation row">
                   <label for="maintence_interval" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Intervalo de manutenção</label>
                   <div class="col-lg-4 col-md-9 col-sm-8">
-                     <input type="text" class="form-control" id="maintence_interval" name="maintence_interval"  required="">
+                     <input type="text" class="form-control" id="maintence_interval" value="180" name="maintence_interval"  required="">
                   </div>
                </div>
                <div class="form-group form-show-validation row">

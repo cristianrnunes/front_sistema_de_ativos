@@ -83,5 +83,19 @@ class HelperAux
         return $sector->name;
     }
 
+    public function getAllActives(){
+        $endPointSectors = HelperBaseUrlApi::baseUrlApi("asset"); 
+        $token = Session::get('token');
+
+        $response = Http::withToken(
+            $token
+        )->get($endPointSectors);
+    
+        if(is_countable(json_decode($response)) && sizeof(json_decode($response)) > 0){
+            return json_decode($response);
+        }else{
+            return 0;
+        }
+    }
     
 }
