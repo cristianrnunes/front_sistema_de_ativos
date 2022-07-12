@@ -227,7 +227,50 @@
         $("#div-msg").fadeOut().empty();
     }, 4000);
     </script>
+<!-- Tabelas -->
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src="/cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+     $('#tabelaAtivos').DataTable( 
+    {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
+        }
+    }
+     );
 
+     $('#tabelaUsuarios').DataTable( 
+    {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
+        }
+    }
+     );
+
+     $('#tabelaSetores').DataTable( 
+    {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
+        }
+    }
+     );
+
+     $('#tabelaOcorrencias').DataTable( 
+    {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
+        }
+    }
+     );
+
+     $('#tabelaManutencao').DataTable( 
+    {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
+        }
+    }
+     );
+</script>
 
 </body>
 
