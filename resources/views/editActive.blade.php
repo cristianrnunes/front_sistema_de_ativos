@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Editar ativo')
 @section('content')
-
 <div class="container-fluid">
    <div class="page-header">
       <h4 class="page-title">Editar ativo</h4>
@@ -41,7 +40,6 @@
                      {{session('msg_error')}}
                   </div>
                   @endif
-
                   <div class="form-group form-show-validation row">
                      <label for="name" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Equipamento <span class="required-label">*</span></label>
                      <div class="col-lg-4 col-md-9 col-sm-8">
@@ -55,23 +53,23 @@
                      </div>
                   </div>
                   <div class="form-group form-show-validation row">
-                  <label for="purchase_date" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Data da compra:</label>
-                  <div class="col-lg-4 col-md-9 col-sm-8">
-                     <input disabled type="date" class="form-control" id="purchase_date" name="purchase_date" value="{{$active->purchase_date}}"  required="">
+                     <label for="purchase_date" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Data da compra:</label>
+                     <div class="col-lg-4 col-md-9 col-sm-8">
+                        <input disabled type="date" class="form-control" id="purchase_date" name="purchase_date" value="{{$active->purchase_date}}"  required="">
+                     </div>
                   </div>
-               </div>
-               <div class="form-group form-show-validation row">
-                  <label for="start_use_date" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Data de início do uso:</label>
-                  <div class="col-lg-4 col-md-9 col-sm-8">
-                     <input disabled type="date" class="form-control" id="start_use_date" name="start_use_date"  value="{{$active->start_use_date}}"  required="">
-                  </div>
-               </div>
                   <div class="form-group form-show-validation row">
-                  <label for="purchase_value" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Valor de compra<span class="required-label">*</span></label>
-                  <div class="col-lg-4 col-md-9 col-sm-8">
-                     <input disabled type="text" class="form-control" id="purchase_value" name="purchase_value" value="{{$active->purchase_value}}"  required="">
+                     <label for="start_use_date" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Data de início do uso:</label>
+                     <div class="col-lg-4 col-md-9 col-sm-8">
+                        <input disabled type="date" class="form-control" id="start_use_date" name="start_use_date"  value="{{$active->start_use_date}}"  required="">
+                     </div>
                   </div>
-               </div>
+                  <div class="form-group form-show-validation row">
+                     <label for="purchase_value" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Valor de compra<span class="required-label">*</span></label>
+                     <div class="col-lg-4 col-md-9 col-sm-8">
+                        <input disabled type="text" class="form-control" id="purchase_value" name="purchase_value" value="{{$active->purchase_value}}"  required="">
+                     </div>
+                  </div>
                   <div class="form-group form-show-validation row">
                      <label for="name" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">Valor atual<span class="required-label">*</span></label>
                      <div class="col-lg-4 col-md-9 col-sm-8">
@@ -97,9 +95,27 @@
                      </div>
                   </div>
                </div>
+               <div class="text-center mt-5">
+                  <!-- <label>Digite um valor</label> -->
+                  <input id="inputValue2" value="{{$active->id}}" type="text" hidden/>
+                  <!-- <a class="btn btn-warning" onclick="geraBarcode()">Gerar código de barras</a> -->
+               </div>
+               <div style="justify-content: center; display: grid; text-align: center;" >
+               <span>Código de barras</span>
+                  <img  id="barcodeImg"/>
+               </div>
+              
+               <div class="mt-4" style="justify-content: center; display: grid; text-align: center;">
+               <span>QR code</span>
+               <textarea maxlength="256" rows="3" id="conteudoQRCode" hidden>{{$active->id}}</textarea>
+               <img id="imageQRCode" src="" width="150">
+               </div>
+               
                <div class="form-group form-show-validation row container" style="justify-content: end !important">
                   <div class="form-check" style="background-color:#e9e9e9; border-radius:10px">
-                     <h6>Status</label><h6>
+                     <h6>
+                     Status</label>
+                     <h6>
                      <label class="form-radio-label">
                      <input class="form-radio-input" type="radio" name="active" value="1"  >
                      <span class="form-radio-sign">Ativo</span>
@@ -247,45 +263,45 @@
                   </div>
                </div>
                <div id="ocorrencias" class="table-responsive" style="display: none; padding-bottom:30px">
-                <div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                    <div class="row">
-                    </div>
-                    <div class="row">
+                  <div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                     <div class="row">
+                     </div>
+                     <div class="row">
                         <div class="col-sm-12">
-                            <table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 30.688px;">Código</th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 238.688px;">Ativo</th>
-                                        <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 354.656px;">Descrição</th>
-                                        <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 186.641px;">Data/hora</th>
-                                        <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 30.641px;">Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($ocurrences as $o)
-                                    @if($id == $o->asset_id)
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1"> {{$active->id}} </td>
-                                        <td class="sorting_1"> {{$active->name}} </td>
-                                        <td>{{$o->description}}</td>
-                                        <td>{{$o->date_time}}</td>
-                                        <td>
-                                            <div class="form-button-action">
-                                                <a href="/editar_ocorrencia/{{$o->id}}" type="button" data-toggle="tooltip" title="Editar" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                    <i class="la la-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endif
-                                    @endforeach
-                                </tbody>
-                            </table>
+                           <table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
+                              <thead>
+                                 <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 30.688px;">Código</th>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 238.688px;">Ativo</th>
+                                    <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 354.656px;">Descrição</th>
+                                    <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 186.641px;">Data/hora</th>
+                                    <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 30.641px;">Ação</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 @foreach($ocurrences as $o)
+                                 @if($id == $o->asset_id)
+                                 <tr role="row" class="odd">
+                                    <td class="sorting_1"> {{$active->id}} </td>
+                                    <td class="sorting_1"> {{$active->name}} </td>
+                                    <td>{{$o->description}}</td>
+                                    <td>{{$o->date_time}}</td>
+                                    <td>
+                                       <div class="form-button-action">
+                                          <a href="/editar_ocorrencia/{{$o->id}}" type="button" data-toggle="tooltip" title="Editar" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                          <i class="la la-edit"></i>
+                                          </a>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 @endif
+                                 @endforeach
+                              </tbody>
+                           </table>
                         </div>
-                    </div>
-                </div>
-            </div>
+                     </div>
+                  </div>
+               </div>
                <div class="card-action">
                   <div class="row">
                      <div class="col-md-12">
@@ -299,40 +315,82 @@
       </div>
    </div>
 </div>
-
-
+<script src="/assets/js/JsBarcode.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 <script>
-function isActive(value){
+   window.onload = function() {
+      geraBarcode()
+      geraQr()
+   }
 
-   if(value == "manu"){
+   function geraQr(){
+      var conteudo = $('#conteudoQRCode').val();
+      var GoogleCharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=';
+      var imagemQRCode = GoogleCharts + conteudo;
+      $('#imageQRCode').attr('src', imagemQRCode);
+   }
 
-      let isVisible = $("#box-depre").is(":visible");
-      if(isVisible){
+   
+      function geraBarcode(){
+      let codigo = document.querySelector("#inputValue2");
+   //   JsBarcode("#barcode", codigo.value, {
+   //   format: "pharmacode",
+   //   lineColor: "#000",
+   //   width:6,
+   //   height:40,
+   //   displayValue: false
+   //    });
+   
+   JsBarcode("#barcodeImg")
+     .options({font: "OCR-B"}) // Will affect all barcodes
+     .CODE128(codigo.value, {height: 85, textPosition: "bottom", fontSize: 16})
+     .render();
+   }
+
+   const srcImg =  document.getElementById("teste").src 
+   function print() {
+     
+      alert(tag)
+      // w.onload = function () { w.print(); }
+      
+   }
+
+   function download(){
+         $("#downloadId").attr("href", srcImg)
+   }
+
+
+</script>
+<script>
+   function isActive(value){
+   
+      if(value == "manu"){
+   
+         let isVisible = $("#box-depre").is(":visible");
+         if(isVisible){
+            $("#box-depre").toggle()
+         }
+   
+         $("#box-manu").toggle();
+   
+      }else{
+   
+         let isVisible = $("#box-manu").is(":visible");
+         if(isVisible){
+            $("#box-manu").toggle()
+         }
+   
          $("#box-depre").toggle()
       }
-
-      $("#box-manu").toggle();
-
-   }else{
-
-      let isVisible = $("#box-manu").is(":visible");
-      if(isVisible){
-         $("#box-manu").toggle()
-      }
-
-      $("#box-depre").toggle()
    }
-}
-function openOcorrecias(){
-   $("#ocorrencias").toggle();
-}
+   function openOcorrecias(){
+      $("#ocorrencias").toggle();
+   }
 </script>
-
 <style>
-.btn-color-active{
+   .btn-color-active{
    background-color: #007bff;
    color: #fff;
-}
+   }
 </style>
 @endsection
-

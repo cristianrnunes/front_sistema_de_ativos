@@ -112,13 +112,13 @@
                   </div>
                </div>
 
-             <div class="text-center mt-5">
+             <!-- <div class="text-center mt-5">
                <label>Digite um valor</label>
                   <input id="inputValue" type="text"/>
                   <a class="btn btn-warning" onclick="geraBarcode()">Gerar código de barras</a>
             </div> 
 
-            <img  id="barcode"/>
+            <img  id="barcode"/> -->
             <!-- </div> -->
             <!-- <div class="form-group form-show-validation row">
 						<h6 class="col-12 text-center">Cadastrar ação:</h>
@@ -172,26 +172,26 @@
    </div>
 </div>
 
-<script src="assets/js/JsBarcode.all.min.js"></script>
+<!-- <script src="assets/js/JsBarcode.all.min.js"></script> -->
 <script>
 
-function geraBarcode(){
-   let codigo = document.querySelector("#inputValue");
-//   JsBarcode("#barcode", codigo.value, {
-//   format: "pharmacode",
-//   lineColor: "#000",
-//   width:6,
-//   height:40,
-//   displayValue: false
-//    });
+// function geraBarcode(){
+//    let codigo = document.querySelector("#inputValue");
+// //   JsBarcode("#barcode", codigo.value, {
+// //   format: "pharmacode",
+// //   lineColor: "#000",
+// //   width:6,
+// //   height:40,
+// //   displayValue: false
+// //    });
 
-JsBarcode("#barcode")
-  .options({font: "OCR-B"}) // Will affect all barcodes
-//   .EAN13("1234567890128", {fontSize: 18, textMargin: 0})
-  .blank(20) // Create space between the barcodes
-  .EAN5(codigo.value, {height: 85, textPosition: "top", fontSize: 16, marginTop: 15})
-  .render();
-}
+// JsBarcode("#barcode")
+//   .options({font: "OCR-B"}) // Will affect all barcodes
+// //   .EAN13("1234567890128", {fontSize: 18, textMargin: 0})
+//   .blank(20) // Create space between the barcodes
+//   .EAN5(codigo.value, {height: 85, textPosition: "top", fontSize: 16, marginTop: 15})
+//   .render();
+// }
 
 function isActive(value){
 
